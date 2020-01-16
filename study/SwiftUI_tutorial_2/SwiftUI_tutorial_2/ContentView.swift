@@ -16,6 +16,14 @@ struct ContentView: View {
     @State var bornIn = 0
     @State var gender = 0
     
+    var resultScript:String {
+        if(name.isEmpty){
+            return "Enter your name"
+        } else{
+            return "\(name)'s gender is \(genderType[gender]), and age is \(120-bornIn)."
+        }
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -37,6 +45,9 @@ struct ContentView: View {
                             Text("\(self.genderType[$0])")
                         }
                     }.pickerStyle(SegmentedPickerStyle())
+                }
+                Section(header: Text("Results")) {
+                    Text("\(resultScript)")
                 }
             }.navigationBarTitle("join us")
         }
