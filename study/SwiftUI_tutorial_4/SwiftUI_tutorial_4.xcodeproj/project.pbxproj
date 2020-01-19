@@ -61,10 +61,10 @@
 				6C32333623D3242700FB104D /* AppDelegate.swift */,
 				6C32333823D3242700FB104D /* SceneDelegate.swift */,
 				6C32333A23D3242700FB104D /* ContentView.swift */,
+				6C32335023D325EB00FB104D /* CarMaker.swift */,
 				6C32333C23D3242800FB104D /* Assets.xcassets */,
 				6C32334123D3242800FB104D /* LaunchScreen.storyboard */,
 				6C32334423D3242800FB104D /* Info.plist */,
-				6C32335023D325EB00FB104D /* CarMaker.swift */,
 				6C32333E23D3242800FB104D /* Preview Content */,
 			);
 			path = SwiftUI_tutorial_4;
