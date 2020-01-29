@@ -44,3 +44,31 @@ let divider = 2
 let halfPi = 3.14/2 // 직접 계산하는건 가능하지만,
 let halfPi2 = 3.14/Double(divider) // 이와 같이 상수로 나눠줄 땐 type 바꿔줘야 함.
 
+// -------------------------------------------------------------------------
+
+// Tuple
+// ,로 구분된 값의 리스트. ()로 묶음.
+// 내부에는 type 상관없이 넣을 수 있음
+
+let time1 = (9,0,48)
+time1.0
+
+let time2:(h:Int, m:Int, s:Int) = (11,51,5)
+time2.h
+time2.m
+time2.s
+
+let duration = (time1, time2) // tuple 안에 tuple
+let (start, end) = duration
+let endHour = end.h // 즉시 Index 정의로 꺼내 쓸 수 있음
+
+// typealias : 간단한 type 지정
+typealias Time = (h:Int, m:Int, s:Int)
+typealias Duration = (start:Time, end:Time)
+
+let today:Duration = ((9,10,23), (17,8,21))
+print("We studied until \(today.end.h) today.")
+// 이와 같이 tuple과 typealias를 활용하여 값의 묶음을 만들 수 있고, 편리하게 이 묶음에서 값을 빼내 쓸 수 있음
+
+// -------------------------------------------------------------------------
+
