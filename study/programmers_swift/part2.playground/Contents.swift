@@ -72,3 +72,33 @@ print("We studied until \(today.end.h) today.")
 
 // -------------------------------------------------------------------------
 
+// Collections: Array
+// Array: 순서를 갖고 있는 같은 타입의 값들의 배열
+
+// 아래 두 방법으로 array를 선언할 수 있음
+var meetingRooms:Array<String> = ["Bansky", "rivera", "Kahlo", "Picasso", "Cezanne", "Matisse"]
+var groups:[Int] = [10, 8, 14, 9]
+// 그리고 아래처럼 새로운 값을 추가, 삭제할 수 있음
+meetingRooms += ["Renoir"]
+
+// 이전에 사용했던 speed 값들로 int type의 history array를 만들어봄
+var speedHistory:[Int] = []
+speedHistory += [currentSpeed]
+let gpsSpeed = 114.1
+speedHistory.append(Int(gpsSpeed))
+
+speedHistory[1]
+speedHistory.first
+speedHistory.last
+
+// array copy.
+// 단, 선언만 한다고 주소값이 copy 되는 것은 아니고,
+let historyBackup = speedHistory
+// 아래와 같이 어느 한쪽이 수정되어야만 그 때 copy가 됨.
+speedHistory += [150]
+historyBackup
+
+// -------------------------------------------------------------------------
+
+// Collection: Dictionary
+
