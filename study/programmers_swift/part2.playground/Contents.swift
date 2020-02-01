@@ -100,5 +100,31 @@ historyBackup
 
 // -------------------------------------------------------------------------
 
-// Collection: Dictionary
+// Collection: Dictionary, Set
+// Dictionary: 값에 이름표를 붙여 저장
+// 위 예제의 회의실에 대해, 회의실의 최대 수용 인원도 함께 저장하고 싶을 때 사용하면 좋겠지요~
+var  roomCapacity:[String:Int] = ["Bansky":4, "rivera":8, "Kahlo":8, "Picasso":10, "Cezanne":20, "Matisse":30]
+// roomCapacity += ["Renoir":40] // array처럼 새로운 값은 이렇게 추가하면 안됨.
+roomCapacity["Renoir"] = 40 // Key에 value 할당하듯이 추가할 수 있음.
+
+let roomNames = roomCapacity.keys
+let capacities = roomCapacity.values
+// 이와 같이 얻어오면, array를 얻어오는 것처럼 보이지만, LazyMapCollection 형식으로 얻어오게 됨
+// 실제 array 처럼 얻어오려면 아래와 같이 array를 만드는 방식으로!
+let roomNames2 = [String](roomCapacity.keys)
+let capacities2 = [Int](roomCapacity.values)
+
+// let total = capacities.reduce(0, combine: +)
+
+// set : array와 유사하지만, 순서를 가지고 있지 않은 collection
+// array와 달리, 집합 연산을 하기 좋음!!
+let subway2:Set = [""]
+let subway3:Set = [""]
+// 사용할 수 있는 함수들 : Intersection(교집합), Subtracting(차집합), Union(합집합), symmetricDifference(대칭 차집합)
+let transfer = subway2.intersection(subway3)
+let notTranser = subway2.subtracting(subway3)
+let union = subway2.union(subway3)
+let exOR = subway2.symmetricDifference(subway3)
+
+// -------------------------------------------------------------------------
 
