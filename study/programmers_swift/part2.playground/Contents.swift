@@ -128,3 +128,36 @@ let exOR = subway2.symmetricDifference(subway3)
 
 // -------------------------------------------------------------------------
 
+// Control Flow (if, for, switch 흐름제어 활용)
+
+if transfer.count > 0 {
+    print("환승역은 \(transfer) 입니다.")
+} else {
+    print("환승역은 없습니다.")
+}
+
+//for i=0; i<count; i++ {} 이렇게도 쓸 수 있고, 아래처럼도 쓸 수 있음.
+for station in subway2 {
+    print("이번 역은 \(station) 입니다.")
+}
+
+for (roomName, capacity) in roomCapacity {
+    let roomDescription:String
+    switch capacity {
+    case 4:
+        roomDescription = "\(roomName)은 스터디 룸이며 정원은 \(capacity)명 입니다."
+    case 5...10:
+        roomDescription = "\(roomName)은 스터디 룸이며 정원은 \(capacity)명 입니다."
+    case 11...30:
+        roomDescription = "\(roomName)은 스터디 룸이며 정원은 \(capacity)명 입니다."
+    case let caseCapacity where caseCapacity > 30:
+        roomDescription = "\(roomName)의 정원은 \(capacity)명이며 별도의 사용신청이 필요합니다."
+    case _ where capacity > 30: // 바로 윗 case와 같은 조건이지만, 언더바로 더 간편하게 쓸 수 있음!!
+        roomDescription = "\(roomName)의 정원은 \(capacity)명이며 별도의 사용신청이 필요합니다."
+    default: // 반드시 필요한 조건임!!!!
+        roomDescription = "\(roomName)의 정보를 다시 확인해주세요."
+    }
+}
+
+// -------------------------------------------------------------------------
+
